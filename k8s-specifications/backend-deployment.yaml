@@ -15,7 +15,7 @@ spec:
         app: backend
     spec:
       containers:
-      - image: sampledevopstodoappacr.azurecr.io/backend-service
+      - image: sampledevopstodoappacr.azurecr.io/backend-service:20250120-5ff281b
         name: backend
         ports:
         - containerPort: 3500
