@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - image: sampledevopstodoappacr.azurecr.io/frontend-service:20250120-463eef2
+        name: frontend
+        ports:
+        - containerPort: 3000
+          name: result
+      imagePullSecrets:
+      - name: acr-secret
